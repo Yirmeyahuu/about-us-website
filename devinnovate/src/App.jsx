@@ -91,9 +91,16 @@ function App() {
                 
                 <div className="relative z-10">
                   {/* Profile Image */}
-                  <div className="relative mb-6 mx-auto w-32 h-32 -mt-10">
+                  <div className="relative mb-6 mx-auto w-32 h-32 -mt-10 ">
                     {/* Spinning rounded background */}
-                    <div className={`absolute inset-0 bg-gradient-to-r ${member.gradient} rounded-full animate-spin-slow`}></div>
+                    <div className={`absolute inset-0 bg-gradient-to-r ${member.gradient} rounded-full animate-spin-slow border-4 border-white`}></div>
+                    {/* Floating particles */}
+                    <div className="absolute inset-0 pointer-events-none">
+                      <span className="absolute w-3 h-3 bg-white/40 rounded-full left-6 top-8 animate-particle1"></span>
+                      <span className="absolute w-2 h-2 bg-white/30 rounded-full left-16 top-4 animate-particle2"></span>
+                      <span className="absolute w-1.5 h-1.5 bg-white/20 rounded-full left-20 top-16 animate-particle3"></span>
+                      <span className="absolute w-2.5 h-2.5 bg-white/30 rounded-full left-10 top-20 animate-particle4"></span>
+                    </div>
                     {/* PNG image overlapping the background */}
                     <img
                       src={member.image}
@@ -173,6 +180,28 @@ function App() {
         .delay-1000 {
           animation-delay: 1s;
         }
+
+
+        @keyframes particle1 {
+          0%, 100% { transform: translateY(0) scale(1); opacity: 0.7; }
+          50% { transform: translateY(-10px) scale(1.2); opacity: 1; }
+        }
+        @keyframes particle2 {
+          0%, 100% { transform: translateY(0) scale(1); opacity: 0.5; }
+          50% { transform: translateY(8px) scale(1.1); opacity: 0.8; }
+        }
+        @keyframes particle3 {
+          0%, 100% { transform: translateY(0) scale(1); opacity: 0.4; }
+          50% { transform: translateY(-6px) scale(1.3); opacity: 0.7; }
+        }
+        @keyframes particle4 {
+          0%, 100% { transform: translateY(0) scale(1); opacity: 0.6; }
+          50% { transform: translateY(12px) scale(1.2); opacity: 0.9; }
+        }
+        .animate-particle1 { animation: particle1 2.5s ease-in-out infinite; }
+        .animate-particle2 { animation: particle2 3s ease-in-out infinite; }
+        .animate-particle3 { animation: particle3 2s ease-in-out infinite; }
+        .animate-particle4 { animation: particle4 2.8s ease-in-out infinite; }
       `}</style>
     </div>
   );
