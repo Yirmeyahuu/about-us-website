@@ -10,7 +10,8 @@ function App() {
       nickname: "Jhinwoo",
       position: "Thesis Adviser",
       mantra: "Innovation distinguishes between a leader and a follower.",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop"
+      image: "/jhinwoo.png",
+      gradient: "from-purple-500 to-pink-500"
     },
     {
       id: 2,
@@ -18,7 +19,9 @@ function App() {
       nickname: "poypoy",
       position: "Lead Web Developer/Project Manager",
       mantra: "Code is poetry written in logic.",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop"
+      image: "/poypoy.png",
+      gradient: "from-sky-300 to-cyan-500"
+    
     },
     {
       id: 3,
@@ -26,7 +29,8 @@ function App() {
       nickname: "bonbon",
       position: "UI/UX Designer/System Analyst",
       mantra: "Design is not just what it looks like, but how it works.",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop"
+      image: "/bayer.png",
+      gradient: "from-green-400 to-lime-500"
     },
     {
       id: 4,
@@ -34,7 +38,8 @@ function App() {
       nickname: "Charles",
       position: "Lead Game Developer",
       mantra: "Strategy without tactics is the slowest route to victory.",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop"
+      image: "/roque.png",
+      gradient: "from-yellow-500 to-orange-500"
     },
     {
       id: 5,
@@ -42,7 +47,8 @@ function App() {
       nickname: "Roy",
       position: "Front End Developer/Assistant Programmer",
       mantra: "Excellence is not a destination; it is a continuous journey.",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop"
+      image: "/wenard.png",
+      gradient: "from-fuchsia-500 to-purple-500"
     }
   ];
 
@@ -58,7 +64,7 @@ function App() {
         {/* Header Section */}
         <div className="text-center mb-20 animate-fade-in">
           <h1 className="text-6xl font-bold mb-6 text-white">
-            DevInnovate
+            Meet the Team
           </h1>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
             Driven by passion, united by vision. We are the architects of innovation.
@@ -85,12 +91,15 @@ function App() {
                 
                 <div className="relative z-10">
                   {/* Profile Image */}
-                  <div className="relative mb-6 mx-auto w-32 h-32">
-                    <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full animate-spin-slow"></div>
+                  <div className="relative mb-6 mx-auto w-32 h-32 -mt-10">
+                    {/* Spinning rounded background */}
+                    <div className={`absolute inset-0 bg-gradient-to-r ${member.gradient} rounded-full animate-spin-slow`}></div>
+                    {/* PNG image overlapping the background */}
                     <img
                       src={member.image}
                       alt={member.name}
-                      className="relative z-10 w-full h-full rounded-full object-cover border-4 border-gray-900 transition-transform duration-500 group-hover:scale-110"
+                      className="absolute left-1/2 top-1/2 w-50 h-50 -translate-x-1/2 -translate-y-1/2 rounded-full object-cover  transition-transform duration-500 group-hover:scale-110"
+                      style={{ zIndex: 20 }}
                     />
                   </div>
 
