@@ -105,7 +105,7 @@ function App() {
                     <img
                       src={member.image}
                       alt={member.name}
-                      className="absolute left-1/2 top-1/2 w-50 h-50 -translate-x-1/2 -translate-y-1/2 rounded-full object-cover  transition-transform duration-500 group-hover:scale-110"
+                      className="absolute left-1/2 top-1/2 w-50 h-50 -translate-x-1/2 -translate-y-1/2 object-cover  transition-transform duration-500 group-hover:scale-110"
                       style={{ zIndex: 20 }}
                     />
                   </div>
